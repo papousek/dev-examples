@@ -3,10 +3,14 @@ package org.richfaces.demo;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import java.util.List;
+import java.util.logging.Logger;
+import javax.faces.event.ValueChangeEvent;
 
 @SessionScoped
 @ManagedBean(name = "inputBean")
 public class InputBean {
+    private static final Logger LOGGER = Logger.getLogger(InputBean.class.getName());
+    private int counter;
     private String value;
     private List<String> values;
 
@@ -24,5 +28,14 @@ public class InputBean {
 
     public void setValues(List<String> values) {
         this.values = values;
+    }
+
+    public int getCounter() {
+        return counter;
+    }
+
+    public void increaseCounter(ValueChangeEvent event) {
+        counter++;
+        LOGGER.info("Counter increased to " + counter);
     }
 }
