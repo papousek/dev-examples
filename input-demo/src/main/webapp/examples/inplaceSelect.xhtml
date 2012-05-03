@@ -31,6 +31,7 @@
                     <f:selectItem itemLabel="Label#12" itemValue="Value#12" />
                     <f:selectItem itemLabel="Label#13" itemValue="Value#13" />
                     <f:selectItem itemLabel="Label#14" itemValue="Value#14" />
+                    <f:ajax execute="form" event="blur" render="out" />
                 </in:inplaceSelect>
 
                 Mayor Rudy Giuliani plans to drop out and endorse McCain, two GOP sources said. That would give McCain added
@@ -47,6 +48,10 @@
             <h:outputText value="Entered Value: #{inputBean.value}" />
             <br />
             <h:outputText value="Counter: #{inputBean.counter}"/>
+            <br />
+            <h:outputText value="Time: #{inputBean.date}">
+                <f:convertDateTime pattern="HH:MM:ss.SSS" />
+            </h:outputText>
         </h:panelGroup>
 
         <!--a4j:poll render="is" interval="2000" />

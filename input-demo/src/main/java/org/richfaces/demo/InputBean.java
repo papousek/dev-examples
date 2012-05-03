@@ -1,5 +1,6 @@
 package org.richfaces.demo;
 
+import java.util.Date;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import java.util.List;
@@ -32,6 +33,10 @@ public class InputBean {
 
     public int getCounter() {
         return counter;
+    }
+
+    public Date getDate() {
+        return new Date();
     }
 
     public void increaseCounter(ValueChangeEvent event) {
